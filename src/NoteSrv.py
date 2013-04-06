@@ -26,16 +26,29 @@ def startSrv():
 	sys.stdout.flush()
 	sys.stderr.flush()
 
+def process(cmd):
+	print "cmd:" + cmd
+	if cmd == "update":
+		print("update")
+	elif cmd == "start":
+		print("start")
+
+
 if __name__ == '__main__':
 	startSrv()
 	print("startSrv success!")
-	
+
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # create a socket
 	host = socket.gethostname()
 	port = 21000
-	s.bind((host, port))
+	s.bind(("0.0.0.0", port))
 	s.listen(10)
 	while True:
 		c, addr = s.accept()
-		c.send("hahahahah")
+		cmd = c.recv(1024)
+		c.send("recv ok")
 		c.close()
+
+		print("recv cmd:" + cmd)
+		#process the cmd
+		process(cmd)
