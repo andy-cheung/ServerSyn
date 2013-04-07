@@ -47,7 +47,9 @@ def sendresult(cmd, ip, ret):
 
 if __name__ == '__main__':
 	startSrv()
+	print "========================="
 	print("startSrv success!")
+	print "========================="
 
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # create a socket
 	port = 21000
