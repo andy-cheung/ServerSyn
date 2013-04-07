@@ -30,11 +30,10 @@ def process(cmd, ip):
 	print "cmd:" + cmd
 	if cmd == "update":
 		# update file from file center
-		print("update")
 		os.system("./update.sh")
 	elif cmd == "start":
 		# start all game server
-		print("start")
+		os.system("./start.sh")
 	# call back the center server 
 	ret = "ok"
 	sendresult(cmd, ip, ret)

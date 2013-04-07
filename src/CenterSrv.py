@@ -52,10 +52,6 @@ def startthread(cmd, allip) :
 	thread.start_new_thread(waitforret, (allip, ))
 
 if __name__ == '__main__':
-	#arg1 is ip, arg2 is the cmd
-	# if len(sys.argv) < 2:
-	# 	print("arg less then 2")
-	# 	os.exit(1)
 	while True:
 		cmd = sys.stdin.readline()[:-1]
 		if cmd == "exit":
